@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/stealjs/steal-bundler.svg?branch=master)](https://travis-ci.org/stealjs/steal-bundler)
+
 # steal-bundler
 
-[![Build Status](https://travis-ci.org/stealjs/steal-bundler.svg?branch=master)](https://travis-ci.org/stealjs/steal-bundler)
+
 
 ## Use
 

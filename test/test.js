@@ -39,3 +39,37 @@ describe("inferred from source content", function(){
 	});
 
 });
+
+describe("provided as a glob", function(){
+
+	before(function(done){
+		rimraf(__dirname + "/basics/dist").then(function(){
+			this.buildPromise = stealTools.build({
+				config: __dirname + "/basics/package.json!npm"
+			}, {
+				quiet: true
+			});
+
+			this.bundlePromise = this.buildPromise.then(function(buildResult){
+				return bundleAssets(buildResult, {
+					infer: false,
+					glob: "test/basics/docs/**/*"
+				});
+			});
+
+			return this.bundlePromise;
+
+		}.bind(this)).then(function(){
+			done();
+		});
+	});
+
+	it("Copies over the files provided by the glob", function(){
+		assert(exists(__dirname + "/basics/dist/docs/hello.json"), "doc copied");
+	});
+
+	it("infer: false prevents copying of css images", function(){
+		assert(!exists(__dirname + "/basics/dist/images"), "images not copied");
+	});
+
+});
