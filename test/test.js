@@ -6,7 +6,7 @@ var fs = require("fs-extra");
 var rimraf = asap(fs.remove);
 var exists = require("is-there");
 
-describe("bundling assets", function(){
+describe("inferred from source content", function(){
 
 	before(function(done){
 		rimraf(__dirname + "/basics/dist").then(function(){
@@ -31,6 +31,11 @@ describe("bundling assets", function(){
 			exists(__dirname + "/basics/dist/images/logo.png"),
 			"logo moved to the destination folder"
 		);
+	});
+
+	it("rewrites contents of css to point to moved location", function(){
+		var css = fs.readFileSync(__dirname + "/basics/dist/bundles/main.css", "utf8");
+		assert(css.indexOf("url(../images/logo.png)") > 0, "urls were rewritten");
 	});
 
 });
