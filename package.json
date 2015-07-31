@@ -9,9 +9,17 @@
   "scripts": {
     "test": "mocha test/test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stealjs/steal-bundler.git"
+  },
   "keywords": [
     "StealTools"
   ],
+  "bugs": {
+    "url": "https://github.com/stealjs/steal-bundler/issues"
+  },
+  "homepage": "https://github.com/stealjs/steal-bundler#readme",
   "author": "Bitovi",
   "license": "MIT",
   "dependencies": {
