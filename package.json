@@ -1,0 +1,27 @@
+{
+  "name": "steal-bundler",
+  "version": "1.0.0",
+  "description": "Bundle assets along with a steal project",
+  "main": "lib/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "keywords": [
+    "StealTools"
+  ],
+  "author": "Bitovi",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^0.22.1",
+    "lodash.uniq": "^3.2.2",
+    "pdenodeify": "^0.1.0",
+    "steal-tools": "^0.11.0-pre.3"
+  },
+  "devDependencies": {
+    "is-there": "^4.0.0",
+    "mocha": "^2.2.5"
+  }
+}
