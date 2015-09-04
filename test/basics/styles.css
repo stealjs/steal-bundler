@@ -1,3 +1,9 @@
+@font-face {
+	font-family: foo;
+	src: url('fonts/foo.eot');
+	src: url('fonts/foo.woff') format('woof2');
+}
+
 body {
 	background: url("images/logo.png");
 }
