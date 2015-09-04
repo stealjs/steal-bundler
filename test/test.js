@@ -14,7 +14,8 @@ describe("inferred from source content", function(){
 			this.buildPromise = stealTools.build({
 				config: __dirname + "/basics/package.json!npm"
 			}, {
-				quiet: true
+				quiet: true,
+				minify: false
 			});
 
 			this.bundlePromise = this.buildPromise.then(bundleAssets);
@@ -23,7 +24,7 @@ describe("inferred from source content", function(){
 
 		}.bind(this)).then(function(){
 			done();
-		});
+		}, done);
 	});
 
 	it("moves assets it finds in css", function(){
@@ -42,6 +43,17 @@ describe("inferred from source content", function(){
 		assert(
 			exists(__dirname + "/basics/dist/node_modules/steal/steal.production.js"),
 			"steal.production.js included"
+		);
+	});
+
+	it("works with font-face", function(){
+		assert(
+			exists(__dirname + "/basics/dist/fonts/foo.eot"),
+			"eot font moved"
+		);
+		assert(
+			exists(__dirname + "/basics/dist/fonts/foo.woff"),
+			"woff font moved"
 		);
 	});
 
