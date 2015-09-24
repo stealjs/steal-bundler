@@ -55,6 +55,10 @@ describe("inferred from source content", function(){
 			exists(__dirname + "/basics/dist/fonts/foo.woff"),
 			"woff font moved"
 		);
+		assert(
+			exists(__dirname + "/basics/dist/fonts/foo.svg"),
+			"svg font moved"
+		);
 	});
 
 });
