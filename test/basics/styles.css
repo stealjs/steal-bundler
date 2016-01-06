@@ -13,3 +13,11 @@ body {
 .node {
 	background: url("images/logo.png");
 }
+
+/** 
+ * No specific test is written for this because simply including this CSS makes the tests fail.
+ * The bundler would try to find a file on the file system which didn't exist.
+ */
+.data {
+	background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+}
