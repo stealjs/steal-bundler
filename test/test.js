@@ -5,13 +5,19 @@ var asap = require("pdenodeify");
 var fs = require("fs-extra");
 var rimraf = asap(fs.remove);
 var exists = require("is-there");
+var uniq = require("lodash.uniq");
+var sinon = require('sinon');
+
+var copySpy;
 
 describe("inferred from source content", function(){
 
 	before(function(done){
+		copySpy = sinon.spy(fs, "copy");
 		rimraf(__dirname + "/basics/dist").then(function(){
 
 			this.buildPromise = stealTools.build({
+				main: ["main", "home"],
 				config: __dirname + "/basics/package.json!npm"
 			}, {
 				quiet: true,
@@ -26,11 +32,25 @@ describe("inferred from source content", function(){
 			done();
 		}, done);
 	});
+	after(function(){
+		fs.copy.restore();
+	});
 
 	it("moves assets it finds in css", function(){
 		assert(
 			exists(__dirname + "/basics/dist/images/logo.png"),
 			"logo moved to the destination folder"
+		);
+	});
+
+	it("moves assets only once", function(){
+		var destinations = [];
+		for(var i = 0; i < copySpy.callCount; i++) {
+			destinations.push(copySpy.getCall(i).args[1]);
+		}
+		assert(
+			destinations.length === uniq(destinations).length,
+			"assets copied once"
 		);
 	});
 
