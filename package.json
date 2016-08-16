@@ -1,6 +1,6 @@
 {
   "name": "steal-bundler",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Bundle assets along with a steal project",
   "main": "lib/main.js",
   "directories": {
