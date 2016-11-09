@@ -33,7 +33,7 @@
     "is-there": "^4.0.0",
     "mocha": "^2.2.5",
     "sinon": "^1.17.4",
-    "steal": "^0.16.0",
-    "steal-tools": "^0.16.0"
+    "steal": "^1.0.0-rc.0",
+    "steal-tools": "^1.0.0-rc.0"
   }
 }
