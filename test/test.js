@@ -59,13 +59,6 @@ describe("inferred from source content", function(){
 		assert(css.indexOf("url(../images/logo.png)") > 0, "urls were rewritten");
 	});
 
-	it("includes steal.production.js in the dist folder", function(){
-		assert(
-			exists(__dirname + "/basics/dist/node_modules/steal/steal.production.js"),
-			"steal.production.js included"
-		);
-	});
-
 	it("works with font-face", function(){
 		assert(
 			exists(__dirname + "/basics/dist/fonts/foo.eot"),
