@@ -1,1 +1,1 @@
-require("./home.css!");
+require("./home.css");
