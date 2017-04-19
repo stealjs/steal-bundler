@@ -27,7 +27,8 @@
     "glob": "^7.0.5",
     "lodash.assign": "^4.2.0",
     "lodash.uniq": "^4.5.0",
-    "pdenodeify": "^0.1.0"
+    "minimatch": "^3.0.2",
+	"pdenodeify": "^0.1.0"
   },
   "devDependencies": {
     "is-there": "^4.0.0",

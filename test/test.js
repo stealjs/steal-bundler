@@ -88,7 +88,7 @@ describe("provided as a glob", function(){
 			this.bundlePromise = this.buildPromise.then(function(buildResult){
 				return bundleAssets(buildResult, {
 					infer: false,
-					glob: "test/basics/docs/**/*"
+					glob: ["test/basics/docs/**/*", "test/basics/fonts/*.woff"]
 				});
 			});
 
@@ -100,7 +100,13 @@ describe("provided as a glob", function(){
 	});
 
 	it("Copies over the files provided by the glob", function(){
-		assert(exists(__dirname + "/basics/dist/docs/hello.json"), "doc copied");
+		assert(exists(__dirname + "/basics/dist/docs/hello.json"), "json copied");
+		assert(exists(__dirname + "/basics/dist/fonts/foo.woff"), "font copied");
+	});
+
+	it("Updates bundle reference to file copied by the glob", function(){
+		var css = fs.readFileSync(__dirname + "/basics/dist/bundles/basics/main.css", "utf8");
+		assert(css.indexOf("url(../../fonts/foo.woff)") > 0, "urls were rewritten");
 	});
 
 	it("infer: false prevents copying of css images", function(){
