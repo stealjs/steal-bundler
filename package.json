@@ -1,6 +1,6 @@
 {
   "name": "steal-bundler",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Bundle assets along with a steal project",
   "main": "lib/main.js",
   "directories": {
@@ -28,7 +28,7 @@
     "lodash.assign": "^4.2.0",
     "lodash.uniq": "^4.5.0",
     "minimatch": "^3.0.2",
-	"pdenodeify": "^0.1.0"
+    "pdenodeify": "^0.1.0"
   },
   "devDependencies": {
     "is-there": "^4.0.0",
