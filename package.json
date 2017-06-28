@@ -33,7 +33,7 @@
   "devDependencies": {
     "is-there": "^4.0.0",
     "mocha": "^3.2.0",
-    "sinon": "^1.17.4",
+    "sinon": "^2.3.6",
     "steal": "^1.0.6",
     "steal-tools": "^1.0.0"
   }
