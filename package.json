@@ -23,18 +23,17 @@
   "author": "Bitovi",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^1.0.0",
-    "glob": "^7.0.5",
-    "lodash.assign": "^4.2.0",
+    "fs-extra": "^4.0.2",
+    "glob": "^7.1.2",
     "lodash.uniq": "^4.5.0",
     "minimatch": "^3.0.2",
     "pdenodeify": "^0.1.0"
   },
   "devDependencies": {
-    "is-there": "^4.0.0",
+    "is-there": "^4.4.3",
     "mocha": "^3.2.0",
     "sinon": "^1.17.4",
-    "steal": "^1.0.6",
-    "steal-tools": "^1.0.0"
+    "steal": "^1.5.13",
+    "steal-tools": "^1.8.4"
   }
 }
