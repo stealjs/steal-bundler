@@ -78,6 +78,7 @@ describe("inferred from source content", function(){
 });
 
 describe("provided as a glob", function(){
+	this.timeout(5000);
 	before(function(done){
 		fs.removeSync(__dirname + "/basics/dist");
 
