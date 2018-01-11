@@ -10,6 +10,20 @@ var sinon = require('sinon');
 
 var copySpy;
 
+describe("removeDots", function() {
+	var removeDots = require("../lib/remove_dots");
+
+	it("works with forward slashes", function() {
+		assert.equal(removeDots("./images/logo.png"), "images/logo.png");
+		assert.equal(removeDots("../../images/logo.png"), "images/logo.png");
+	});
+
+	it("works with backward slashes", function() {
+		assert.equal(removeDots(".\\images\\logo.png"), "images\\logo.png");
+		assert.equal(removeDots("..\\..\\images\\logo.png"), "images\\logo.png");
+	});
+});
+
 describe("inferred from source content", function(){
 	this.timeout(5000);
 
