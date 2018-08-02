@@ -13,7 +13,7 @@ steal-bundler infers static assets from your project and copies them for you aut
 var stealTools = require("steal-tools");
 var bundleAssets = require("steal-bundler");
 
-stealTools.build){
+stealTools.build({
 	config: __dirname + "/package.json!npm"
 }).then(function(buildResult){
 
