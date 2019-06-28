@@ -23,7 +23,7 @@
   "author": "Bitovi",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^4.0.2",
+    "fs-extra": "^8.1.0",
     "glob": "^7.1.2",
     "lodash.uniq": "^4.5.0",
     "minimatch": "^3.0.2",
