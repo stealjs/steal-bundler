@@ -30,7 +30,7 @@
     "pdenodeify": "^0.1.0"
   },
   "devDependencies": {
-    "is-there": "^4.4.3",
+    "is-there": "^4.5.0",
     "mocha": "^3.2.0",
     "sinon": "^1.17.4",
     "steal": "^1.12.6",
